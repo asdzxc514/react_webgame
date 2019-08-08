@@ -1,7 +1,6 @@
 {
   "name": "webpack_numberbaseball",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --hot"
@@ -22,5 +21,6 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5"
-  }
+  },
+  "description": ""
 }
