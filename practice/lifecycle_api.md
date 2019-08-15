@@ -1,4 +1,4 @@
-## LifeCycle API
+## LifeCycle API (class)
 
 eact의 컴포너트는 생명주기(Life cycle)을 가진다. 생명주기란 컴포넌트가 생성되고 사용되고 소멸될 때 까지 일련의 과정을 말한다.
 이러한 생명주기 안에서는 특정 시점에 자동으로 호출되는 메서드가 있는데, 이를 라이프 사이클 이벤트라고 한다.
@@ -27,7 +27,7 @@ class Test extends Component {
 
     }
     // 컴포넌트가 제거되기 직전 (=부모가 자식을 없앴을때), 비동기 요청 정리를 많이함
-    componentDidUnmount(){ 
+    componentWillUnmount(){ 
 
     }
 
@@ -59,6 +59,7 @@ export default Test;
 - React 엘리먼트를 실제 DOM 노드에 추가하기 직전에 호출되는 메소드
 - DOM이 생성되지 않았으므로 DOM을 조작할 수 없다
 - render가 호출되기 전이기 때문에 setState를 사용해도 render가 호출하지 않음
+- 현재 사용 거의 안함 / v16.3 이후부터는 `UNSAFE_componentWillMount()` 라는 이름으로 사용
 
 ### ComponentDidMount()
 
@@ -66,7 +67,7 @@ export default Test;
 
 -  컴포넌트가 맨 처음 DOM에 redering된 후 호출되는 메소드
 - setState()를 해도 이 부분은 다시 render 되지 않는다
-- 현재 사용 거의 안함 / v16.3 이후부터는 `UNSAFE_componentWillMount()` 라는 이름으로 사용
+
 
 > // 외부 라이브러리 연동: D3, masonry, etc  
 > // 컴포넌트에서 필요한 데이터 요청: Ajax, GraphQL, etc  
@@ -74,3 +75,57 @@ export default Test;
 
 ---
 
+
+
+사용이유 :  비동기 통신..때문에..
+
+
+
+<br><br>
+
+
+
+## LifeCycle API (hooks)
+
+- useEffect 는 여러번 사용이 가능하다 (다른 효과를 주고싶을 때)
+- [ ] 안에 여러게 사용도 가능하다 ex) [imgCoord, result, score]
+- 배열에는 꼭 useEfect를 다시 실행할 값만 넣기!
+
+
+```js
+// componentDidMount, componentDidUpdate (1대1 대응은 아님)
+useEffect( () => {
+    interval.current = setInterval(changeHand, 100);
+    return () => { // componentWillUnmount 역할
+        clearInterval(interval.current);
+    }
+}, [imgCoord]);  
+//  [] 안에 아무것도 적지않으면 처음 한번만 실행하고 실행하지않겠따! 
+// [] 안에 값이 바뀔때마다 실행됨!
+```
+
+
+
+
+---
+
+```js
+// class
+componentDIdMount() {
+    this.setState({
+        imgCoord: 3,
+        score: 1,
+        result: 2,
+    })
+}
+
+// hooks
+userEffect( () => {
+    setImgCoord();
+    setScore();
+}, [imgCoord, score]);
+
+userEffect( () => {
+    setResult();
+}, [result]);
+```

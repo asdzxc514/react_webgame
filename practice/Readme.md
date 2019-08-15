@@ -6,4 +6,4 @@
 1. [prevState & Rendering 최적화](prevState_rendering.md)
 1. [createRef](createRef.md)
 1. [Rdf & if문 & for문](ref_if_for.md)
-1. [LifeCycle api - method](lifecycle_api.md)
+1. [LifeCycle api(class/hooks) - method](lifecycle_api.md)
