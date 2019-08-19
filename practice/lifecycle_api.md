@@ -6,7 +6,7 @@ eact의 컴포너트는 생명주기(Life cycle)을 가진다. 생명주기란 �
 <br>
 
 > 클래스의 경우 -> constructor -> render -> ref -> componentDidMount   
-> setState/prps 바뀔때 - shouldComponentUpdate -> (true) -> render -> componentDidUpdate
+> setState/props 바뀔때 - shouldComponentUpdate -> (true) -> render -> componentDidUpdate
 > 부모가 나를 없앴을 때 - componentWillUnmount -> 소멸
 
 ```js
@@ -18,6 +18,7 @@ class Test extends Component {
         
     }
 
+    //  props 또는 state가 변경되었을 때, 재랜더링 여부를 return 값으로 결정함 , 컴포넌트 업데이트 직전에 호출
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         return true;
     }
@@ -50,6 +51,18 @@ export default Test;
 - props 또는 state가 변경되었을 때, **재랜더링 여부**를 return 값으로 결정함
 
 
+### ComponentDidMount()
+
+> : 구성요소가 탑재됨
+
+-  컴포넌트가 맨 처음 DOM에 rendering된 후 호출되는 메소드
+- setState()를 해도 이 부분은 다시 render 되지 않는다
+
+
+> // 외부 라이브러리 연동: D3, masonry, etc  
+> // 컴포넌트에서 필요한 데이터 요청: Ajax, GraphQL, etc  
+> // DOM 에 관련된 작업: 스크롤 설정, 크기 읽어오기 등
+
 
 
 ### componentWillMount()
@@ -61,27 +74,13 @@ export default Test;
 - render가 호출되기 전이기 때문에 setState를 사용해도 render가 호출하지 않음
 - 현재 사용 거의 안함 / v16.3 이후부터는 `UNSAFE_componentWillMount()` 라는 이름으로 사용
 
-### ComponentDidMount()
-
-> : 구성요소가 탑재됨
-
--  컴포넌트가 맨 처음 DOM에 redering된 후 호출되는 메소드
-- setState()를 해도 이 부분은 다시 render 되지 않는다
-
-
-> // 외부 라이브러리 연동: D3, masonry, etc  
-> // 컴포넌트에서 필요한 데이터 요청: Ajax, GraphQL, etc  
-> // DOM 에 관련된 작업: 스크롤 설정, 크기 읽어오기 등
-
 ---
 
 
 
-사용이유 :  비동기 통신..때문에..
 
 
-
-<br><br>
+<br>
 
 
 
@@ -105,9 +104,11 @@ useEffect( () => {
 ```
 
 
-
+<br>
 
 ---
+
+<br>
 
 ```js
 // class

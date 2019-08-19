@@ -1,7 +1,7 @@
-const path = require('path'); // (경로) 노드모듈시스템.. 모르면 외워라.. 상단에 스크립트 불러오는거임
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-    name: 'word-relay-setting', // 끝말잇기에 대한 설정, 생략해도 무방
     mode: 'development', // 실서비스: production
     devtool: 'eval', // 빠르게 하겠다,  hidden-source-map 도 사용 가능
     resolve: {
@@ -19,13 +19,25 @@ module.exports = {
             loader: 'babel-loader',
             options: {
                 presets: [ '@babel/preset-env', '@babel/preset-react'],
-                plugins: [ '@babel/plugin-proposal-class-properties']
-            }
-        }],
+                plugins: [ '@babel/plugin-proposal-class-properties'],
+            },
+            
+        }, {
+            test: /\.scss$/,
+            use: [
+              'style-loader', // creates style nodes from JS strings
+              'css-loader', // translates CSS into CommonJS
+              'sass-loader', // compiles Sass to CSS, using Node Sass by default
+            ],
+          }], 
+        
+        
+
     },
     //출력
     output: { 
-        path: path.join(__dirname, 'dist'),  // node 문법..
-        filename: 'app.js'
+        path: path.join(__dirname, 'dist'),   // (실제경로)
+        filename: 'app.js',
+        publicPath: '/dist'  // 추가  (가상경로)
     },
 };

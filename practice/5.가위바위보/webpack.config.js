@@ -30,8 +30,8 @@ module.exports = {
 
     //출력
     output: { 
-        path: path.join(__dirname, 'dist'),  // node 문법..
+        path: path.join(__dirname, 'dist'),   // (실제경로)
         filename: 'app.js',
-        publicPath: '/dist'
+        publicPath: '/dist'  // 추가  (가상경로)
     },
 };
