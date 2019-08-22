@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // 클래스의 경우 -> constructor -> render -> ref -> componentDidMount 
-// (setState/prps 바뀔때 -> shouldComponentUpdate -> (true) -> render -> componentDidUpdate)
+// (setState/props 바뀔때 -> shouldComponentUpdate -> (true) -> render -> componentDidUpdate)
 // 부모가 나를 없앴을 때 -> componentWillUnmount -> 소멸
 
 const rspCoords = {
