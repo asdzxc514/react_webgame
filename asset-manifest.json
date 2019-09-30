@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/EGOING-APP/static/css/main.b100e6da.chunk.css",
+    "main.js": "/EGOING-APP/static/js/main.81bb13c5.chunk.js",
+    "main.js.map": "/EGOING-APP/static/js/main.81bb13c5.chunk.js.map",
+    "runtime-main.js": "/EGOING-APP/static/js/runtime-main.2a1f82a8.js",
+    "runtime-main.js.map": "/EGOING-APP/static/js/runtime-main.2a1f82a8.js.map",
+    "static/js/2.0c9ce092.chunk.js": "/EGOING-APP/static/js/2.0c9ce092.chunk.js",
+    "static/js/2.0c9ce092.chunk.js.map": "/EGOING-APP/static/js/2.0c9ce092.chunk.js.map",
+    "index.html": "/EGOING-APP/index.html",
+    "precache-manifest.c3ac96741af5607afe05c6592bc3152f.js": "/EGOING-APP/precache-manifest.c3ac96741af5607afe05c6592bc3152f.js",
+    "service-worker.js": "/EGOING-APP/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/EGOING-APP/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/EGOING-APP/static/media/logo.25bf045c.svg"
+  }
+}
