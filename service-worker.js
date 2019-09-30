@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react_webgame/EGOING-APP/precache-manifest.377316e777cd3fb7c9c6c7d12892fdfc.js"
+  "/react_webgame/EGOING-APP/precache-manifest.2b2f7f7f880da4b11dd5b9f60218d141.js"
 );
 
 self.addEventListener('message', (event) => {

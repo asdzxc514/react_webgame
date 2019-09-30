@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a2d1e6442d8498e3c1845629475886cd",
+    "revision": "58dd3affc8a12b0384473c4074e0cfae",
     "url": "/react_webgame/EGOING-APP/index.html"
   },
   {
-    "revision": "c685fe78d4e62d556b32",
+    "revision": "1a930d95e25356e882ec",
     "url": "/react_webgame/EGOING-APP/static/css/main.b100e6da.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react_webgame/EGOING-APP/static/js/2.0c9ce092.chunk.js"
   },
   {
-    "revision": "c685fe78d4e62d556b32",
-    "url": "/react_webgame/EGOING-APP/static/js/main.81bb13c5.chunk.js"
+    "revision": "1a930d95e25356e882ec",
+    "url": "/react_webgame/EGOING-APP/static/js/main.e6ec9eda.chunk.js"
   },
   {
     "revision": "1f9e9a45a35ed04d73f0",
